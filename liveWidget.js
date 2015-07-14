@@ -344,7 +344,7 @@ LiveWidgetTest.LiveWidgetBase = new Class({
 		this.connFails = 0;		
 		
 		this.setState('online');
-		this.setText(responseText);
+		this.setText(response);
 		this.show();
 		
 		setTimeout((function () { this.sendRequest(connURL); }).bind(this),  this.updateInterval * 1000);
