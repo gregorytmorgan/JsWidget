@@ -29,7 +29,4 @@
 		return;
 	}
 	
-
-	
 	echo date("H:i:s");
-?>
