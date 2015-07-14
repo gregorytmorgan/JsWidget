@@ -4,6 +4,11 @@ Simple UI widget.
 
 Widget to demonstrate simple HTTP server polling and error handling. Renders a single DIV with text content that is updated on ever poll.  The polling stops if there are n failures.
 
+Files:
+  liveWidget.js - The widget code.
+  index.php - Simple HTML file that demonstrates how to instantiate the widget. Throw this on a web server.
+  time.php - Data source for the widget.  Throw this a web server in the same domain.
+
 Instantiate with:
 
 * A HTTP URL that provides JSON response text: <pre> {
