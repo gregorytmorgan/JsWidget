@@ -25,7 +25,7 @@ Instantiate with:
 Optional options:
 * debug: int
 * updateInterval: int
-* callbacks: {
+* callbacks: <code>{
     beforeActivate, function(),           // Return false to prevent activate
     afterActivate, function(),
     beforeSend: function (),           // Return false to prevent send
@@ -33,5 +33,5 @@ Optional options:
     beforeShow: function (),           // Return false to prevent show
     afterShow: function (),
     parseResponse: function(responseText, responseXML),
-  }
+  }</code>
 
