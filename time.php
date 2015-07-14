@@ -1,7 +1,17 @@
 <?php
 
-	// randomly delay the response - max should be longer than request timeout 
-	// to test timeout handling on the client side
+	// default result
+	$defaultResult = array(
+		"status" => array(
+			"code" => 400,
+			"text" => "error",
+			"description" => "there_was_an_error"
+		),
+		"data" => null
+	);
+
+	// randomly delay the response - max should be longer than client-side request 
+	// timeout to test timeout handling on the client side
 	sleep(rand(0,8));
 
 //	// break a specific caller
@@ -14,7 +24,7 @@
 
 	// return invalid data
 	if ($val == 9) {
-		echo "adfdajajdfkj";
+		echo "{adfdajajdfkj}";
 		return;
 	}
 
@@ -29,7 +39,24 @@
 		return;
 	}
 	
-
+	// success result
+	$result = array(
+			"status" => array(
+			"code" => 200,
+			"text" => "ok",
+			"description" => "success"	
+		),
+		"data" => date("H:i:s")
+	);	
+			
+	$jsonResult = json_encode($result);
+			
+	if ($jsonResult === false) {
+		$defaultResult["status"]["description"] = "json_encode_error";
+		echo json_encode($defaultResult);
+		return;
+	}
 	
-	echo date("H:i:s");
-?>
+	echo $jsonResult;
+	
+	
