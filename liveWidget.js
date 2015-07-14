@@ -64,6 +64,9 @@ LiveWidgetTest.LiveWidgetBase = new Class({
 	
 	pos: {x: 0, y: 0},
 
+	/**
+	 * Class name applied to the widget root dom element.
+	 */
 	className: 'live-widget',
 	
 	connFails: 0,
