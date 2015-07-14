@@ -11,7 +11,7 @@
 				
 			'use strict';
 			
-			/*global LiveWidgetTest */
+			/*global LiveWidgetTest, err*/
 			
 			window.addEvent('domready', function() {
 				pageInit();
@@ -26,10 +26,29 @@
 			 */
 			function reponseParser(responseText, responseXML) {
 				console.log('reponseParser - entry');
-				var i, parts, seconds;
+				var i, parts, seconds, oResponse, responseCode;
 
-				parts = responseText.split(':');
+				try {
+					oResponse = JSON.parse(responseText);
+				} catch (err) {
+					if (!err.message) {
+						err.message = "Invalid response json";
+					}
+					throw err;
+				}
+				
+				// chk for server side errors
+				if (oResponse.status === undefined || oResponse.status.code !== 200) {
+					responseCode = (oResponse.status === undefined)  ? 'empty' : oResponse.status;
+					throw {message:'Server error.  Code:' + responseCode};
+				}
 
+				if (!oResponse.data) {
+					throw {message:'Missing response data'};
+				} 
+				
+				// validate the response data
+				parts = oResponse.data.split(':');
 				if (parts.length !== 3) {
 					throw {message:'Invalid response data'};
 				}		
@@ -42,7 +61,8 @@
 					}
 				}
 				
-				return responseText;
+				// return the response text
+				return oResponse.data;
 			}
 			
 			/**
