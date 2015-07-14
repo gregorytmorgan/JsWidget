@@ -27,11 +27,10 @@ Instantiate with:
 2. A name string.
 3. A parent DOM element id.
 
-
 Optional configuration parameters:
-* debug: int                            // debug mask: LiveWidgetTest.LiveWidgetBase. [STATE | XHR | DOM]
-* updateInterval: int                   // Server poll interval
-* callbacks:
+* "debug": int                          // debug mask: `LiveWidgetTest.LiveWidgetBase. [STATE | XHR | DOM]`
+* "updateInterval": int                 // Server poll interval
+* "callbacks":
 ```
 {
     beforeActivate, function(),         // Return false to prevent activate
