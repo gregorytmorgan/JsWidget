@@ -1,0 +1,3 @@
+# JsWidget
+
+Simple UI widget.
