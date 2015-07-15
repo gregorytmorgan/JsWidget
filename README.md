@@ -11,8 +11,8 @@ Files:
 
 Instantiate with:
 
-`1. A HTTP URL that provides JSON response text:`
 ```
+1. A HTTP URL that provides JSON response text:
 {
   "status": {
     "code": 200,                          // 200 for sucess, otherwise and error
@@ -23,9 +23,9 @@ Instantiate with:
     "00:00:00"                            // hours, minutes, seconds
   }
 }
+2. A name string.
+3. A parent DOM element id.
 ```
-`2. A name string.`
-`3. A parent DOM element id.`
 
 Optional configuration parameters:
 * "debug": int                          // debug mask: `LiveWidgetTest.LiveWidgetBase. [STATE | XHR | DOM]`
