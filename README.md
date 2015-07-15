@@ -11,8 +11,7 @@ Files:
 
 Instantiate with:
 
-1. A HTTP URL that provides JSON response text:
-```
+1. A HTTP URL that provides JSON response text: ```
 {
   "status": {
     "code": 200,                          // 200 for sucess, otherwise and error
@@ -22,8 +21,7 @@ Instantiate with:
   "data": {
     "00:00:00"                            // hours, minutes, seconds
   }
-}
-```
+} ```
 2. A name string.
 3. A parent DOM element id.
 
